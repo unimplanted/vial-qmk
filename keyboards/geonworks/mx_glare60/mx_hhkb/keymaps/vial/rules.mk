@@ -1,13 +1,6 @@
-
 VIA_ENABLE = yes
 VIAL_ENABLE = yes
 LTO_ENABLE = yes
-QMK_SETTINGS = no
 
-COMBO_ENABLE = no
-
-
-
-
-
-
+RGBLIGHT_ENABLE = yes
+RGBLIGHT_LAYERS_ENABLE = yes 
