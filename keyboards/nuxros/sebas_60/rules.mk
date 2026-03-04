@@ -1,0 +1,9 @@
+# File intentionally blank
+FIRMWARE_FORMAT = uf2
+UF2_FAMILY = 0xabcdf103
+
+MCU_LDSCRIPT = STM32F103xB_plumbl
+
+RGBLIGHT_ENABLE = yes
+# RGBLIGHT_DRIVER = custom
+WS2812_DRIVER_REQUIRED = yes
