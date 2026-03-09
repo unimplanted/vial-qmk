@@ -42,7 +42,7 @@
             "twinkle": true
         },
         "default": {
-            "animation": "rainbow_swirl",
+            "animation": "rainbow_mood",
           "val": 180
         },
       "layers": {
