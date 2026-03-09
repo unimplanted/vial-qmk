@@ -11,10 +11,10 @@
  
 /*
  * Vial 보안 언락 조합
- * ESC (0,0) + Backspace (0,13) 동시 누름
+ * ESC (0,0) + tab (0,1) 동시 누름
  */
 #define VIAL_UNLOCK_COMBO_ROWS { 0, 0 }
-#define VIAL_UNLOCK_COMBO_COLS { 0, 13 }
+#define VIAL_UNLOCK_COMBO_COLS { 0, 1 }
  
 /*
  * 다이나믹 키맵 레이어 수
