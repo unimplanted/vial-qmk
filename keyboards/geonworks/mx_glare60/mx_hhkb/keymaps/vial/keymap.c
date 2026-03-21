@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool led_update_user(led_t led_state) {    // Caps Lock 상태에 따라 0번 LED 제어    
     if (led_state.caps_lock) {
-        rgblight_setrgb_at(COLOR_CYAN, 1); // 0번 LED: 빨강 (Caps Lock ON)
+        rgblight_setrgb_at(COLOR_ORANGE, 1); // 0번 LED: 빨강 (Caps Lock ON)
     } else {
         rgblight_setrgb_at(COLOR_OFF, 1); // 0번 LED 끄기 (Caps Lock OFF)
     }    // Scroll Lock 및 Num Lock 상태에 따라 1번 LED 제어    
