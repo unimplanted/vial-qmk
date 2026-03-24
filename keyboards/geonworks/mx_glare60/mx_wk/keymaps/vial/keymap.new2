@@ -1,0 +1,49 @@
+#include QMK_KEYBOARD_H
+#include "rgblight.h"
+
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    // clang-format off
+    [0] = LAYOUT_all(
+    KC_ESC,   KC_1,     KC_2,     KC_3,  KC_4,    KC_5,  KC_6,   KC_7,  KC_8,  KC_9,     KC_0,     KC_MINS,  KC_EQL,   KC_BSLS,   KC_GRV,
+    KC_TAB,   KC_Q,     KC_W,     KC_E,  KC_R,    KC_T,  KC_Y,   KC_U,  KC_I,  KC_O,     KC_P,     KC_LBRC,  KC_RBRC,  KC_BSPC,
+    KC_LCTL,  KC_A,     KC_S,     KC_D,  KC_F,    KC_G,  KC_H,   KC_J,  KC_K,  KC_L,     KC_SCLN,  KC_QUOT,  KC_NUHS,  KC_ENTER,  KC_ENTER,
+    KC_LSFT,  KC_NUBS,  KC_Z,     KC_X,  KC_C,    KC_V,  KC_B,   KC_N,  KC_M,  KC_COMM,  KC_DOT,   KC_SLSH,  KC_RSFT,  MO(1),
+              KC_LALT,  KC_LGUI,                            KC_SPC,                                KC_RGUI,  KC_RALT),
+
+    [1] = LAYOUT_all(
+    _______,  KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   KC_INS,   _______,
+    KC_CAPS,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  KC_PSCR,  KC_SCRL,  KC_PAUS,  KC_UP,    _______,  KC_DEL,
+    _______,  KC_VOLD,  KC_VOLU,  KC_MUTE,  _______,  _______,  _______,  _______,  KC_HOME,  KC_PGUP,  KC_LEFT,  KC_RGHT,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  KC_END,   KC_PGDN,  KC_DOWN,  _______,  _______,
+              _______,  _______,                                     _______,                                     MO(2),    _______),
+
+    [2] = LAYOUT_all(
+    QK_BOOT,  NK_TOGG,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+              _______,  _______,                                     _______,                                     _______,  _______)
+    // clang-format on
+};
+
+// ↓↓↓ 아래 함수 추가 ↓↓↓
+// LED 업데이트 함수
+bool led_update_user(led_t led_state) {
+    if (led_state.caps_lock) {
+        // Caps Lock이 켜질 때 1-8번 LED 각각 설정된 색으로 변경
+        // rgblight_setrgb_at(255, 0, 0, 0);     // 1번 LED: 체리식 빨강
+           rgblight_setrgb_at(0, 255, 255, 1);     // 2번 LED: 마제식 cyan
+        // rgblight_setrgb_at(0, 0, 255, 2);     // 3번 LED: 파랑
+        // rgblight_setrgb_at(255, 255, 0, 3);   // 4번 LED: 노랑
+        // rgblight_setrgb_at(255, 0, 255, 4);   // 5번 LED: 자주
+        // rgblight_setrgb_at(0, 255, 255, 5);   // 6번 LED: 청록
+        // rgblight_setrgb_at(255, 165, 0, 6);   // 7번 LED: 오렌지
+        // rgblight_setrgb_at(128, 0, 128, 7);   // 8번 LED: 보라
+    } else {
+        // Caps Lock이 꺼질 때 모든 LED를 끄기
+        for (uint8_t i = 0; i < 8; i++) {
+            rgblight_setrgb_at(0, 0, 0, i); // 모든 LED 끄기
+        }
+    }
+    return false;
+}
