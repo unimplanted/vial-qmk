@@ -8,7 +8,7 @@
  LTO_ENABLE = yes
 
  # 기본 기능들
- MOUSEKEY_ENABLE = no         # 마우스 키 필요시 yes
+ MOUSEKEY_ENABLE = yes        # 마우스 키 필요시 yes
  EXTRAKEY_ENABLE = yes        # 미디어 키 필요시 yes
 
  # 고급 기능 (필요시 활성화)
