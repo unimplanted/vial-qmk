@@ -1,6 +1,6 @@
 {
-    "manufacturer": "CannonKeys",
-    "keyboard_name": "Minimi40 Staggered",
+    "manufacturer": "Geonworks",
+    "keyboard_name": "f1-40 722 staggered",
     "maintainer": "awkannan",
     "bootloader": "rp2040",
     "diode_direction": "COL2ROW",
@@ -17,7 +17,7 @@
         "rows": ["GP17", "GP27", "GP11", "GP12"]
     },
     "processor": "RP2040",
-    "url": "https://cannonkeys.com",
+    "url": "https://geonworks.kr",
     "usb": {
         "device_version": "0.0.1",
         "pid": "0x0036",
