@@ -39,18 +39,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // ↓↓↓ 아래 함수 추가 ↓↓↓
 
-// LED 업데이트 함수
+  layer_state_t layer_state_set_user(layer_state_t state) {
+      // 레이어가 변경될 때마다 LED 업데이트 함수를 강제로 호출합니다.
+      led_update_user(host_keyboard_led_state());
+      return state;
+  }
 
-bool led_update_user(led_t led_state) {    // Caps Lock 상태에 따라 0번 LED 제어    
-    if (led_state.caps_lock) {
-        rgblight_setrgb_at(COLOR_GREEN, 1); // 0번 LED: 빨강 (Caps Lock ON)
-    } else {
-        rgblight_setrgb_at(COLOR_OFF, 1); // 0번 LED 끄기 (Caps Lock OFF)
-    }    // Scroll Lock 및 Num Lock 상태에 따라 1번 LED 제어    
-    if (led_state.scroll_lock || led_state.num_lock) {
-        rgblight_setrgb_at(COLOR_RED, 0); // 1번 LED: 노랑 (Scroll Lock 또는 Num Lock ON)    
-    } else {        
-        rgblight_setrgb_at(COLOR_OFF, 0); // 1번 LED 끄기 (Scroll Lock 및 Num Lock OFF)
-    }
-    return false; // 기본 동작 유지
-}
+  bool led_update_user(led_t led_state) {
+      // LED 0번: 캡스락(Caps Lock) 인디케이터
+      if (led_state.caps_lock) {
+          rgblight_setrgb_at(COLOR_YELLOW, 1);
+      } else {
+          rgblight_setrgb_at(COLOR_OFF, 1);
+      }
+
+      // LED 1번: 레이어 4가 켜져 있으면 파란색, 꺼져 있으면 락 상태에 따라 녹색/꺼짐
+      if (layer_state_is(4)) {
+          rgblight_setrgb_at(COLOR_MAGENTA, 0);
+      } else if (led_state.scroll_lock || led_state.num_lock) {
+          rgblight_setrgb_at(COLOR_RED, 0);
+      } else {
+          rgblight_setrgb_at(COLOR_OFF, 0);
+      }
+
+      return false;
+  }
