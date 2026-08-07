@@ -1,15 +1,77 @@
 {
-  "name": "Ramune 60 MX",
+  "name": "RAMUNE60",
+  "vendorId": "0xBA02",
+  "productId": "0x0006",
   "matrix": {
     "rows": 5,
     "cols": 15
   },
-  "lighting": "vialrgb",
-  "layouts": { 
+  "keycodes": [
+    "qmk_lighting"
+  ],  
+  "menus": [
+    {
+      "label": "Lighting",
+      "content": [      
+        {
+          "label": "Backlight",
+          "content": [
+            {
+              "label": "Brightness",
+              "type": "range",
+              "options": [0, 255],
+              "content": ["id_qmk_rgb_matrix_brightness", 3, 1]
+            },
+            {
+              "label": "Effect",
+              "type": "dropdown",
+              "content": ["id_qmk_rgb_matrix_effect", 3, 2],
+              "options": [
+                "All Off",
+                "Solid Color",                
+                "Gradient Up/Down",
+                "Gradient Left/Right",
+                "Breathing",                
+                "Band Val.",                
+                "Pinwheel Val.",
+                "Spiral Val.",
+                "Cycle All",
+                "Cycle Left/Right",
+                "Cycle Up/Down",
+                "Rainbow Moving Chevron",
+                "Cycle Out/In",
+                "Cycle Out/In Dual",
+                "Cycle Pinwheel",
+                "Cycle Spiral",
+                "Rainbow Beacon",
+                "Rainbow Pinwheels",
+                "Pixel Flow"
+              ]
+            },
+            {
+              "showIf": "{id_qmk_rgb_matrix_effect} != 0",
+              "label": "Effect Speed",
+              "type": "range",
+              "options": [0, 255],
+              "content": ["id_qmk_rgb_matrix_effect_speed", 3, 3]
+            },
+            {
+              "showIf": "{id_qmk_rgb_matrix_effect} != 0 && {id_qmk_rgb_matrix_effect} != 24 && {id_qmk_rgb_matrix_effect} != 28 && {id_qmk_rgb_matrix_effect} != 29 && {id_qmk_rgb_matrix_effect} != 32",
+              "label": "Color",
+              "type": "color",
+              "content": ["id_qmk_rgb_matrix_color", 3, 4]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "layouts": {
     "labels": [
-      "Split Bacspace",
+      "Split Backspace",
       "Split Right Shift",
-      "HHKB Space"      
+      "HHKB Space"
     ],
     "keymap": [
       [
@@ -132,12 +194,12 @@
           "c": "#aaaaaa",
           "w": 1.5
         },
-        "4,0\n\n\n2,0",
-        "4,1\n\n\n2,0",
+        "4,0",
+        "4,1",
         {
           "w": 1.5
         },
-        "4,2\n\n\n2,0",
+        "4,2",
         {
           "c": "#cccccc",
           "w": 7
@@ -157,19 +219,7 @@
       [
         {
           "y": 0.5,
-          "w": 2,
-          "d": true
-        },
-        "\n\n\n2,1",
-        {
-          "x": -0.5
-        },
-        "4,1\n\n\n2,1",
-        {
-          "w": 1.5
-        },
-        "4,2\n\n\n2,1",
-        {
+          "x": 4,
           "c": "#cccccc",
           "w": 6
         },
@@ -179,12 +229,7 @@
           "w": 1.5
         },
         "4,9\n\n\n2,1",
-        "4,12\n\n\n2,1",
-        {
-          "w": 2.5,
-          "d": true
-        },
-        "\n\n\n2,1"
+        "4,12\n\n\n2,1"
       ]
     ]
   }
