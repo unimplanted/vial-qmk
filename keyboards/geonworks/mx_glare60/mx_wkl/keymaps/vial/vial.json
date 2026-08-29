@@ -6,6 +6,9 @@
     "rows": 5,
     "cols": 15
   },
+  "modules": [
+    "srwi/keypeek_layer_notify"
+  ],
   "menus": [
     {
       "label": "Indicators",

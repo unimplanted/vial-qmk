@@ -38,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 // ↓↓↓ 아래 함수 추가 ↓↓↓
-
+//
  layer_state_t layer_state_set_user(layer_state_t state) {
      // 레이어가 변경될 때마다 LED 업데이트 함수를 강제로 호출합니다.
      led_update_user(host_keyboard_led_state());
@@ -64,3 +64,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
      return false;
  }
+
