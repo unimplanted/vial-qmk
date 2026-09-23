@@ -38,12 +38,12 @@ bool is_layer4_active = false;
 
 layer_state_t layer_state_set_user(layer_state_t state) {
     // 현재 가장 높은 레이어가 4번인지 확인
-    if (get_highest_layer(state) == 4) {
+    if (get_highest_layer(state) >= 4) {
         if (!is_layer4_active) {
             is_layer4_active = true;
             // 4번 레이어 진입 시 빨간색 점등 (Hue 값을 0으로 변경)
             // 인자 순서: (Hue, Saturation, Value) -> (색상, 채도, 밝기)
-            rgblight_sethsv_noeeprom(0, 255, 125); 
+            rgblight_sethsv_noeeprom(128, 255, 125); 
         }
     } else {
         if (is_layer4_active) {

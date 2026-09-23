@@ -10,5 +10,5 @@
 #define VIAL_KEYBOARD_UID {0xC7, 0x9C, 0xBD, 0x3A, 0x9F, 0x7D, 0x48, 0x6B}
 
 // Vial 잠금 해제 콤보: ESC + 우측 하단 RCTL
-#define VIAL_UNLOCK_COMBO_ROWS { 0, 4 }
-#define VIAL_UNLOCK_COMBO_COLS { 0, 13 }
+ #define VIAL_UNLOCK_COMBO_ROWS {0,1}
+ #define VIAL_UNLOCK_COMBO_COLS {0,0}
