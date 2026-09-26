@@ -2,7 +2,9 @@
 VIA_ENABLE = yes
 VIAL_ENABLE = yes
 DYNAMIC_KEYMAP_ENABLE = yes
-VIAL_INSECURE = no
+VIAL_INSECURE = yes
+
+VIALRGB_ENABLE = yes
 
 # 링크 타임 최적화 (펌웨어 크기 줄이기)
 LTO_ENABLE = yes

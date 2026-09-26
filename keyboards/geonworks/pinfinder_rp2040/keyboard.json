@@ -1,0 +1,13 @@
+{
+    "manufacturer": "pinfinder",
+    "keyboard_name": "RP2040 Pin Finder",
+    "maintainer": "local",
+    "processor": "RP2040",
+    "bootloader": "rp2040",
+    "usb": { "vid": "0xFEED", "pid": "0x2040", "device_version": "0.0.1" },
+    "features": { "bootmagic": false, "extrakey": false, "mousekey": false, "nkro": false, "console": false },
+    "matrix_size": { "rows": 1, "cols": 1 },
+    "matrix_pins": { "custom_lite": true },
+    "diode_direction": "COL2ROW",
+    "layouts": { "LAYOUT": { "layout": [ { "matrix": [0, 0], "x": 0, "y": 0 } ] } }
+}

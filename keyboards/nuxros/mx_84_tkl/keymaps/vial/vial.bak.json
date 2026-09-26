@@ -2,20 +2,26 @@
     "name": "mx_84_tkl",
     "vendorId": "0xCD80",
     "productId": "0xFE01",
-    "lighting": "vialrgb",
+    "menus": ["qmk_rgblight"],
+    "keycodes": ["qmk_lighting"],
     "matrix": {
         "rows": 6,
         "cols": 17
     },
     "layouts": {
-        "labels":[
-           "Split Backspace",
-           "ISO",
-           "Split R shift",
-           "Split L shift",
-           ["F-row","F12","F13"],
-           ["Spacebar","6.25U","7U" ]
-        ],
+    "presets":{
+        "default1":[ 4,0 ],
+        "default2":[ 5,0 ]
+
+      },
+          "labels":[
+              "Split Backspace",
+              "ISO",
+              "Split R shiift",
+              "Split L shiift",
+              ["default1","F12","F13"],
+              ["default2","6.25U","7U" ]
+             ],
     "keymap":
     [
       [

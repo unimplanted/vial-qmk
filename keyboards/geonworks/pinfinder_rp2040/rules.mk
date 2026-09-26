@@ -1,0 +1,1 @@
+SRC += pinfinder.c
