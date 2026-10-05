@@ -1,7 +1,7 @@
 {
     "manufacturer": "Geonworks",
-    "keyboard_name": "Glare 65 Solder",
-    "maintainer": "yuhogeun",
+    "keyboard_name": "Glare65",
+    "maintainer": "Avg.Joe",
     "processor": "RP2040",
     "bootloader": "rp2040",
     "usb": {
