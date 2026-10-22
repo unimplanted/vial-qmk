@@ -1,9 +1,10 @@
 # VIA/Vial 활성화
 VIA_ENABLE = yes
 VIAL_ENABLE = yes
-DYNAMIC_KEYMAP_ENABLE = yes
-VIAL_INSECURE = yes
 
+DYNAMIC_KEYMAP_ENABLE = yes
+
+VIAL_INSECURE = yes
 VIALRGB_ENABLE = yes
 
 # 링크 타임 최적화 (펌웨어 크기 줄이기)
@@ -23,13 +24,13 @@ COMMAND_ENABLE = no          # 디버그 명령어
  
 # 고급 기능 (필요시 활성화)
 TAP_DANCE_ENABLE = yes       # Tap Dance
-COMBO_ENABLE = no            # Combo
+COMBO_ENABLE = yes           # Combo
 KEY_OVERRIDE_ENABLE = yes    # Key Override
 LEADER_ENABLE = no           # Leader Key
 AUTO_SHIFT_ENABLE = no       # Auto Shift
-NO_MK_MK = no                # Macro 
+NO_MK_MK = yes               # Macro 
 
 # 공간 절약
-MAGIC_ENABLE = no
+MAGIC_ENABLE = yes
 GRAVE_ESC_ENABLE = yes
 SPACE_CADET_ENABLE = no
