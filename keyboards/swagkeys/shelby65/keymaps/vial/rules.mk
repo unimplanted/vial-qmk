@@ -1,7 +1,0 @@
-VIA_ENABLE = yes
-VIAL_ENABLE = yes
-
-MCU = STM32F103
-BOOTLOADER = stm32-dfu
-
-CONVERT_TO = uf2
